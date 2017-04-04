@@ -1,5 +1,7 @@
 ﻿using Webcast.ModeloDeDominioComORM.Negocio.DominioNH.GerenciamentoDeAnunciante;
 using FluentNHibernate.Mapping;
+using Webcast.ModeloDeDominioComORM.Negocio.Comum;
+using System;
 
 namespace Webcast.ModeloDeDominioComORM.Negocio.Repositorios.RepositorioNH.Map
 {
@@ -7,8 +9,10 @@ namespace Webcast.ModeloDeDominioComORM.Negocio.Repositorios.RepositorioNH.Map
     {
         public AnuncianteMap() : base()
         {
-            Id(a => a.Id).Column("AnuncianteId") ;
 
+            Id(a => a.Id).CustomType<Guid>().Column("AnuncianteId");
+
+            
             Component(a => a.Nome, nome =>
             {
                 nome.Map(n => n.PrimeiroNome).Column("Nome");

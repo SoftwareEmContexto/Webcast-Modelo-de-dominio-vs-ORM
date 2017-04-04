@@ -1,5 +1,6 @@
 ﻿using Webcast.ModeloDeDominioComORM.Negocio.NucleoCompartilhado;
 using System;
+using Webcast.ModeloDeDominioComORM.Negocio.Comum;
 
 namespace Webcast.ModeloDeDominioComORM.Negocio.DominioNH.GerenciamentoDeAnunciante
 {
@@ -15,7 +16,7 @@ namespace Webcast.ModeloDeDominioComORM.Negocio.DominioNH.GerenciamentoDeAnuncia
             
         }
 
-        public Anunciante(Guid id, Nome nome, Endereco endereco, Email email,
+        public Anunciante(/*Guid id*/Identidade id, Nome nome, Endereco endereco, Email email,
             AgendaTelefonica agendaTelefonica) : base(id)
         {
             if (nome == null)

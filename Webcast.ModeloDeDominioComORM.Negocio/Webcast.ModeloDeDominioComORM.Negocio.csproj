@@ -94,12 +94,10 @@
     <Compile Include="DominioEF\Periodo.cs" />
     <Compile Include="DominioEF\Telefone.cs" />
     <Compile Include="DominioNH\AgendaTelefonica.cs" />
-    <Compile Include="DominioNH\Agregado.cs" />
     <Compile Include="DominioNH\DetalheDeFabricacao.cs" />
     <Compile Include="DominioNH\DetalheDoVeiculo.cs" />
     <Compile Include="DominioNH\Email.cs" />
     <Compile Include="DominioNH\Endereco.cs" />
-    <Compile Include="DominioNH\Entidade.cs" />
     <Compile Include="DominioNH\GerenciamentoDeAnunciante\Anunciante.cs" />
     <Compile Include="DominioNH\GerenciamentoDeAnuncio\Anuncio.cs" />
     <Compile Include="DominioNH\GerenciamentoDeAnuncio\Proposta.cs" />

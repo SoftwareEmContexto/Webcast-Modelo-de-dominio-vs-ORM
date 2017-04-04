@@ -1,6 +1,7 @@
 ﻿using Webcast.ModeloDeDominioComORM.Negocio.NucleoCompartilhado;
 using Webcast.ModeloDeDominioComORM.Negocio.NucleoCompartilhado.Enums;
 using System;
+using Webcast.ModeloDeDominioComORM.Negocio.Comum;
 
 namespace Webcast.ModeloDeDominioComORM.Negocio.DominioNH.GerenciamentoDeAnuncio
 {
@@ -12,12 +13,12 @@ namespace Webcast.ModeloDeDominioComORM.Negocio.DominioNH.GerenciamentoDeAnuncio
         public virtual DetalheDoVeiculo Detalhe { get; protected set; }
         public virtual StatusPublicacao StatusDePublicacao { get; } = StatusPublicacao.NaoVistoriado;
 
-        protected Veiculo():base(Guid.Empty)
+        protected Veiculo():base()
         {
 
         }
 
-        public Veiculo(Guid id, DetalheDeFabricacao detalheDeFabricacao,
+        public Veiculo(Identidade id, DetalheDeFabricacao detalheDeFabricacao,
             ItensOpcicionais opcionais, DetalheDoVeiculo detalhe) : base(id)
         {
             if (detalheDeFabricacao == null)

@@ -4,6 +4,7 @@ using Webcast.ModeloDeDominioComORM.Negocio.Repositorios.RepositorioNH;
 using FluentAssertions;
 using System;
 using Xunit;
+using Webcast.ModeloDeDominioComORM.Negocio.Comum;
 
 namespace SeuCarroNaVitrine.Tests
 {
@@ -19,7 +20,7 @@ namespace SeuCarroNaVitrine.Tests
         [Fact()]
         public void PersistirUmNovoAnuncianteTest()
         {
-            var identidade = Guid.NewGuid();
+            var identidade = new Identidade();
             var nome = Nome.Novo("Gustavo", "Fontes");
             var endereco = Endereco.Novo("Av. paulista", "Jardins", "São Paulo", "SP", 012345678);
             var email = Email.Novo("gustavo.fontes@gmail.com");

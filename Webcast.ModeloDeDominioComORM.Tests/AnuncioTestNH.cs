@@ -4,6 +4,7 @@ using Webcast.ModeloDeDominioComORM.Negocio.NucleoCompartilhado.Enums;
 using Webcast.ModeloDeDominioComORM.Negocio.Repositorios.RepositorioNH;
 using System;
 using Xunit;
+using Webcast.ModeloDeDominioComORM.Negocio.Comum;
 
 namespace SeuCarroNaVitrine.Tests
 {
@@ -18,7 +19,7 @@ namespace SeuCarroNaVitrine.Tests
         [Fact]
         public void SalvarUmNovoAnuncioTest()
         {
-            var identidadeDoAnuncio = Guid.NewGuid();
+            var identidadeDoAnuncio = new Identidade();
             var idAnunciante = Guid.Parse("B2490150-D8A8-4F5F-89AB-A4EB28622BA4");
             var periodo = Periodo.Novo(DateTime.Now, DateTime.Now.AddDays(10));
 
@@ -38,7 +39,7 @@ namespace SeuCarroNaVitrine.Tests
                     4,
                     30.500m);
 
-            
+
             var veiculo = new Veiculo(identidadeDoAnuncio, detalheDeFabricacao, opcionais, detalheDoVeiculo);
 
             var novoAnuncio = new Anuncio(identidadeDoAnuncio, idAnunciante, periodo, veiculo);

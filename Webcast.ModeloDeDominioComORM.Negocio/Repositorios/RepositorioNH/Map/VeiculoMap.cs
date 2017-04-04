@@ -8,7 +8,7 @@ namespace Webcast.ModeloDeDominioComORM.Negocio.Repositorios.RepositorioNH.Map
     {
         public VeiculoMap()
         {
-            Id(s => s.Id).GeneratedBy.Assigned().UnsavedValue(Guid.Empty).Column("VeiculoId");
+            Id(s => s.Id).CustomType<Guid>().GeneratedBy.Assigned().UnsavedValue(Guid.Empty).Column("VeiculoId");
 
             Component(veiculo => veiculo.DetalheDeFabricacao, detalheFabri =>
             {

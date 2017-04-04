@@ -4,12 +4,17 @@ namespace Webcast.ModeloDeDominioComORM.Negocio.Comum
 {
     public class Entidade
     {
-        public virtual Identidade Id { get; protected set; }
+        public virtual Identidade Id { get; set; }
 
 
         public Entidade(Identidade id)
         {
             Id = id;
+        }
+
+        protected Entidade()
+        {
+
         }
 
         public override bool Equals(object entidade)

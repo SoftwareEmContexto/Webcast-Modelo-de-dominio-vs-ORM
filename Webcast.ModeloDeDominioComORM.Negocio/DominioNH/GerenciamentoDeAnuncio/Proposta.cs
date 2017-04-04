@@ -1,5 +1,6 @@
 ﻿using Webcast.ModeloDeDominioComORM.Negocio.NucleoCompartilhado;
 using System;
+using Webcast.ModeloDeDominioComORM.Negocio.Comum;
 
 namespace Webcast.ModeloDeDominioComORM.Negocio.DominioNH.GerenciamentoDeAnuncio
 {
@@ -13,12 +14,12 @@ namespace Webcast.ModeloDeDominioComORM.Negocio.DominioNH.GerenciamentoDeAnuncio
         public virtual decimal Valor { get; }
         public virtual string Mensagem { get; }
 
-        protected Proposta():base(Guid.NewGuid())
+        protected Proposta():base()
         {
 
         }
 
-        public Proposta(Guid id, Guid anuncioId, Nome nome, Email email, Telefone telefone,
+        public Proposta(Identidade id, Guid anuncioId, Nome nome, Email email, Telefone telefone,
             decimal valor, string mensagem) : base(id)
         {
             if (valor == default(decimal))

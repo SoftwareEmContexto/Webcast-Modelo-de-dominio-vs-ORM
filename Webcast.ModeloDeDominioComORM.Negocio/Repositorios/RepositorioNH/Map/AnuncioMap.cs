@@ -1,6 +1,7 @@
 ﻿using Webcast.ModeloDeDominioComORM.Negocio.DominioNH.GerenciamentoDeAnuncio;
 using FluentNHibernate;
 using FluentNHibernate.Mapping;
+using System;
 
 namespace Webcast.ModeloDeDominioComORM.Negocio.Repositorios.RepositorioNH.Map
 {
@@ -8,7 +9,8 @@ namespace Webcast.ModeloDeDominioComORM.Negocio.Repositorios.RepositorioNH.Map
     {
         public AnuncioMap()
         {
-            Id(anuncio => anuncio.Id).GeneratedBy.Assigned().Column("AnuncioId");
+            
+            Id(anuncio => anuncio.Id).CustomType<Guid>().GeneratedBy.Assigned().Column("AnuncioId");
             Map(anuncio => anuncio.AnuncianteId);
 
             Map(anuncio => anuncio.DataDePublicacao);
