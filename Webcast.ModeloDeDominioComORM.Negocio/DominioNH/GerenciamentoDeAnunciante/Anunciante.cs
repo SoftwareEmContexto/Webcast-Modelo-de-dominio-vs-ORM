@@ -16,7 +16,7 @@ namespace Webcast.ModeloDeDominioComORM.Negocio.DominioNH.GerenciamentoDeAnuncia
             
         }
 
-        public Anunciante(/*Guid id*/Identidade id, Nome nome, Endereco endereco, Email email,
+        public Anunciante(Identidade id, Nome nome, Endereco endereco, Email email,
             AgendaTelefonica agendaTelefonica) : base(id)
         {
             if (nome == null)
