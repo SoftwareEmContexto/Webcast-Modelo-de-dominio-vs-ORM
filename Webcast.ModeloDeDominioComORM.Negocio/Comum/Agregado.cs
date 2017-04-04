@@ -6,6 +6,11 @@
         {
           
         }
-      
+
+        public Agregado() : base(new Identidade())
+        {
+
+        }
+
     }
 }

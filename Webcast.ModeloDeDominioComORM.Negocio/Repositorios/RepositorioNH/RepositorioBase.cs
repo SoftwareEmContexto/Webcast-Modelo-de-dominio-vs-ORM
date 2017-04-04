@@ -4,10 +4,17 @@ using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using NHibernate;
 using System;
+using Webcast.ModeloDeDominioComORM.Negocio.Comum;
+using FluentNHibernate.Mapping;
+using System.Reflection;
+using FluentNHibernate.Conventions.AcceptanceCriteria;
+using FluentNHibernate.Conventions;
+using FluentNHibernate.Conventions.Inspections;
+using FluentNHibernate.Conventions.Instances;
 
 namespace Webcast.ModeloDeDominioComORM.Negocio.Repositorios.RepositorioNH
 {
-    public class RepositorioBase<T> where T : Agregado
+    public class RepositorioBase<T> where T : Webcast.ModeloDeDominioComORM.Negocio.Comum.Agregado
     {
 
         protected readonly ISessionFactory _sessionFactory;
@@ -21,9 +28,9 @@ namespace Webcast.ModeloDeDominioComORM.Negocio.Repositorios.RepositorioNH
 
         }
 
-        public T ObterPor(Guid id)
+        public T ObterPor(Identidade id)
         {
-            return _session.Load<T>(id);
+            return _session.Load<T>(id.Id);
         }
 
         private ISessionFactory Init()
@@ -33,11 +40,9 @@ namespace Webcast.ModeloDeDominioComORM.Negocio.Repositorios.RepositorioNH
                            .ConnectionString(@"Server=(LocalDb)\MSSQLLocalDB; Database=SeuCarroNaVitrine; Integrated Security=SSPI;"))
                .Mappings(m =>
                {
-                   m.FluentMappings.Add<AnuncianteMap>();
-                   m.FluentMappings.Add<AnuncioMap>();
-                   m.FluentMappings.Add<VeiculoMap>();
-                   m.FluentMappings.Add<PropostaMap>();
-
+     
+                   m.FluentMappings.AddFromAssembly(Assembly.GetExecutingAssembly());
+                   
                })
 
                .BuildConfiguration()
@@ -47,4 +52,5 @@ namespace Webcast.ModeloDeDominioComORM.Negocio.Repositorios.RepositorioNH
 
 
     }
+
 }

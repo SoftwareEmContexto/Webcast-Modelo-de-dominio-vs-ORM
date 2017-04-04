@@ -1,7 +1,6 @@
-﻿
-using Webcast.ModeloDeDominioComORM.Negocio.NucleoCompartilhado;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Webcast.ModeloDeDominioComORM.Negocio.Comum;
 
 namespace Webcast.ModeloDeDominioComORM.Negocio.DominioNH.GerenciamentoDeAnuncio
 {
@@ -15,12 +14,12 @@ namespace Webcast.ModeloDeDominioComORM.Negocio.DominioNH.GerenciamentoDeAnuncio
         public virtual Veiculo Veiculo { get; }
         public virtual IEnumerable<Proposta> Propostas { get { return _propostas; } }
 
-        protected Anuncio():base()
+        protected Anuncio() : base()
         {
 
         }
 
-        public Anuncio(Guid id, Guid anuncianteId, Periodo vigencia,
+        public Anuncio(Identidade id, Guid anuncianteId, Periodo vigencia,
             Veiculo veiculo) : base(id)
         {
 

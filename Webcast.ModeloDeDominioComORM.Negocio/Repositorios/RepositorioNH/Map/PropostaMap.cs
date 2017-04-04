@@ -8,7 +8,7 @@ namespace Webcast.ModeloDeDominioComORM.Negocio.Repositorios.RepositorioNH.Map
     {
         public PropostaMap()
         {
-            Id(s => s.Id).GeneratedBy.Assigned().UnsavedValue(Guid.Empty);
+            Id(s => s.Id).CustomType<Guid>().GeneratedBy.Assigned().UnsavedValue(Guid.Empty);
 
             Component(a => a.Nome, nome =>
             {
